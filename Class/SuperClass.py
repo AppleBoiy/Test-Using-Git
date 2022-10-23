@@ -1,8 +1,4 @@
-
- #- Encapsulation
-from re import S
-
-
+#- Encapsulation
 class Employee:
     #- Class variables
     __minSalary = 1200
