@@ -38,7 +38,17 @@ class Employee:
         return self.__name
     
     def getSalary(self):
-        return self.__salary
+        sal = self.__salary
+        if sal < self.__minSalary:
+            sal = self.__minSalary
+        
+        elif sal > self.__maxSalary:
+            sal = self.__maxSalary
+        
+        else:
+            sal = self.__salary
+        
+        return sal
     
     def getDepartment(self):
         return self.__department
@@ -46,31 +56,17 @@ class Employee:
     #- Calculate annual income
     #- Overloading calculate
     def _annualIncome(self, bonus = 0, overtime = 0):
-        if self.__salary < self.__minSalary:
-            sal = self.__minSalary
-        
-        elif self.__salary > self.__maxSalary:
-            sal = self.__maxSalary
-        
-        else:
-            sal = self.__salary
-        
+        sal = self.getSalary()
         return sal * 12 + bonus + overtime
     
     
     def getData(self):
         data = {
-                'Name': self.__name,
-                'Salary': self.__salary,
-                'Department': self.__department,
+                'Name': self.getName(),
+                'Salary': self.getSalary(),
+                'Department': self.getDepartment(),
                 'Annual Income': self._annualIncome(bonus = 0, overtime = 0)
                 }
-        
-        if data['Salary'] < self.__minSalary :
-            data['Salary'] = self.__minSalary
-            
-        if data['Salary'] > self.__maxSalary :
-            data['Salary'] = self.__maxSalary
         
         return data
     
@@ -78,4 +74,11 @@ class Employee:
     def __str__(self) -> str:
         return f'Name : {self.__name} \nDepartment : {self.__department} \nSalary : {self.__salary} \nAnnual income : {self._annualIncome()}'
     
+    
+    def __delattr__(self) -> None:
+        del self.__name
+        del self.__salary
+        del self.__department
+        
+        pass
  

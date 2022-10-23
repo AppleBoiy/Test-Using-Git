@@ -1,5 +1,5 @@
 Name,Salary,Department,Annual Income,Age,Experiment,Skill,Area
-Employee1,1200,Accounting,14400,20.0,,,
-Employee2,1200,Programming,14400,,1.0,GameDev,
-Employee3,1200,Sale,14400,,,,Chiang Mai
+Employee1,2000,Accounting,24000,20.0,,,
+Employee2,5000,Programming,60000,,1.0,GameDev,
+Employee3,1500,Sale,18000,,,,Chiang Mai
 Employee4,1200,Sale,14400,,,,Chiang Rai
