@@ -38,17 +38,9 @@ class Employee:
         return self.__name
     
     def getSalary(self):
-        sal = self.__salary
-        if sal < self.__minSalary:
-            sal = self.__minSalary
-        
-        elif sal > self.__maxSalary:
-            sal = self.__maxSalary
-        
-        else:
-            sal = self.__salary
-        
-        return sal
+        if self.__salary < self.__minSalary: return self.__minSalary
+        elif self.__salary > self.__maxSalary: return self.__maxSalary
+        else: return self.__salary
     
     def getDepartment(self):
         return self.__department
